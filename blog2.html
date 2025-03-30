@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>صفحه خرید</title>
+  <meta name="description" content="خرید کلاب یونتوس 2025 - کد نخرده و کمیاب با قیمت پایه 310,000 تومان">
+  <meta name="keywords" content="کلاب یونتوس, خرید کد بازی, یونتوس 2025, کد بازی کمیاب">
+  <meta name="author" content="ایلیا صیادی">
+  
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  
+  <meta property="og:title" content="خرید کلاب یونتوس 2025">
+  <meta property="og:description" content="کد نخرده و کمیاب با قیمت پایه 310,000 تومان">
+  <meta property="og:image" content="poast1.jfif">
+  <meta property="og:url" content="https://example.com">
+  <meta property="og:type" content="website">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <style>
+    :root {
+      --primary-color: #3C83A8;
+      --header-color: #315165;
+      --footer-color: #915051;
+      --card-bg: #b3fbc3;
+      --content-bg: #fcc7f1;
+      --border-color: #020202;
+      --light-border: #D0C8C8;
+      --light-text: #f8f9fa;
+      --text-color: #333;
+      --accent-color: #FFD700;
+      --border-radius: 16px;
+      --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      --transition: all 0.3s ease;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      background: var(--primary-color);
+      background: linear-gradient(135deg, var(--primary-color) 0%, #2a5f7a 100%);
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      margin: 0;
+      direction: rtl;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    header {
+      background: var(--header-color);
+      border-bottom: 3px solid var(--light-border);
+      padding: 1.25rem;
+      text-align: center;
+      box-shadow: var(--box-shadow);
+      position: relative;
+      z-index: 100;
+    }
+    
+    .header-link {
+      color: var(--light-text);
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: var(--transition);
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+    }
+    
+    .header-link:hover {
+      color: var(--accent-color);
+      transform: translateY(-2px);
+      background: rgba(255, 255, 255, 0.1);
+    }
+    
+    .header-link strong {
+      font-weight: bold;
+      color: var(--accent-color);
+    }
+    
+    #footer {
+      background: var(--footer-color);
+      border-top: 3px solid var(--border-color);
+      border-radius: 9px;
+      padding: 1rem;
+      text-align: center;
+      margin-top: auto;
+      color: var(--light-text);
+      font-size: 0.9rem;
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .product-card {
+      border: 3px solid var(--border-color);
+      background: var(--card-bg);
+      border-radius: var(--border-radius);
+      max-width: 1000px;
+      width: 95%;
+      margin: 2rem auto;
+      padding: 1.5rem;
+      box-shadow: var(--box-shadow);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .product-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        to bottom right,
+        rgba(255, 255, 255, 0.3) 0%,
+        rgba(255, 255, 255, 0) 60%
+      );
+      transform: rotate(30deg);
+      pointer-events: none;
+    }
+    
+    .product-header {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+    
+    .product-title {
+      margin: 0.75rem 0;
+      color: #1a3e57;
+      font-size: 1.75rem;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    }
+    
+    .product-content {
+      background: var(--content-bg);
+      border: 2px solid var(--border-color);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      padding: 1.5rem;
+      position: relative;
+    }
+    
+    .product-details {
+      flex: 1 1 300px;
+      text-align: right;
+      font-size: 1.1rem;
+    }
+    
+    .product-features {
+      list-style-type: none;
+      margin: 1rem 0;
+    }
+    
+    .product-features li {
+      padding: 0.5rem 0;
+      position: relative;
+      padding-right: 1.5rem;
+    }
+    
+    .product-features li::before {
+      content: '✓';
+      color: #27ae60;
+      font-weight: bold;
+      position: absolute;
+      right: 0;
+    }
+    
+    .product-price {
+      font-weight: bold;
+      color: #c0392b;
+      font-size: 1.2rem;
+      margin: 1rem 0;
+      background: rgba(255, 255, 255, 0.7);
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+      border: 1px dashed #c0392b;
+    }
+    
+    .whatsapp-cta {
+      background: #25D366;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 30px;
+      display: inline-block;
+      margin: 1rem 0;
+      text-decoration: none;
+      font-weight: bold;
+      transition: var(--transition);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border: 2px solid white;
+    }
+    
+    .whatsapp-cta:hover {
+      background: #128C7E;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+    
+    .product-image {
+      flex: 1 1 300px;
+      text-align: center;
+      position: relative;
+    }
+    
+    .product-img {
+      border: 2px solid var(--border-color);
+      width: 100%;
+      max-width: 363px;
+      height: auto;
+      border-radius: var(--border-radius);
+      transition: var(--transition);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    .product-img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+    
+    .badge {
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      background: #e74c3c;
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      transform: rotate(-15deg);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      z-index: 10;
+    }
+    
+    /* Animations */
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    
+    .pulse {
+      animation: pulse 2s infinite;
+    }
+    
+    @media (max-width: 768px) {
+      .product-content {
+        flex-direction: column;
+        padding: 1rem;
+      }
+      
+      .product-details, .product-image {
+        flex: 1 1 100%;
+      }
+      
+      .product-title {
+        font-size: 1.5rem;
+      }
+      
+      .header-link {
+        font-size: 1rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      :root {
+        --border-radius: 12px;
+      }
+      
+      .product-card {
+        padding: 1rem;
+      }
+      
+      .product-title {
+        font-size: 1.3rem;
+      }
+      
+      .whatsapp-cta {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="https://milli.gold/" class="header-link">
+      با هر قیمتی طلا بخر با <strong>میلی گلد</strong>
+    </a>
+  </header>
+
+  <main>
+    <div class="product-card">
+      <div class="product-header">
+        <h2 class="product-title">کلاب لیورپول</h2>
+      </div>
+      <div class="product-content">
+        <div class="product-details">
+          <ul class="product-features">
+            <li>کد نخرده</li>
+            <li>کمیاب</li>
+            <li>نسخه ی 2025</li>
+          </ul>
+          <div class="product-price">قیمت پایه: 120000 تومان</div>
+          <a href="https://wa.me/989038705588" class="whatsapp-cta">
+            خرید مشاجره ای
+          </a>
+        </div>
+        <div class="product-image">
+          <img src="pic2.png" class="product-img" alt="تصویر کالا" loading="lazy">
+        </div>
+      </div>
+    </div>
+	  <br><br>
+	  <div class="product-card">
+      <div class="product-header">
+        <h2 class="product-title">کلاب یونتوس</h2>
+      </div>
+      <div class="product-content">
+        <div class="product-details">
+          <ul class="product-features">
+            <li>کد نخرده</li>
+            <li>کمیاب</li>
+            <li>نسخه ی 2025</li>
+          </ul>
+          <div class="product-price">قیمت پایه: 310,000 تومان</div>
+          <a href="https://wa.me/989038705588" class="whatsapp-cta">
+            خرید مشاجره ای
+          </a>
+        </div>
+        <div class="product-image">
+          <img src="pic1.png" class="product-img" alt="تصویر کالا" loading="lazy">
+        </div>
+      </div>
+    </div>
+	  <br><br>
+	  <div class="product-card">
+      <div class="product-header">
+        <h2 class="product-title">کلاب بارسلونا</h2>
+      </div>
+      <div class="product-content">
+        <div class="product-details">
+          <ul class="product-features">
+            <li>کد خرده</li>
+            <li>کمیاب</li>
+            <li>نسخه ی 2025</li>
+          </ul>
+          <div class="product-price">قیمت پایه: 400000 تومان</div>
+          <a href="https://wa.me/989038705588" class="whatsapp-cta">
+            خرید مشاجره ای
+          </a>
+        </div>
+        <div class="product-image">
+          <img src="pic3.png" class="product-img" alt="تصویر کالا" loading="lazy">
+        </div>
+      </div>
+    </div>
+	  <br><br>
+	  <div class="product-card">
+      <div class="product-header">
+        <h2 class="product-title">کلاب رئال مادرید</h2>
+      </div>
+      <div class="product-content">
+        <div class="product-details">
+          <ul class="product-features">
+            <li>کد نخرده</li>
+            <li>کمیاب</li>
+            <li>نسخه ی 2025</li>
+          </ul>
+          <div class="product-price">قیمت پایه: 500000 تومان</div>
+          <a href="https://wa.me/989038705588" class="whatsapp-cta">
+            خرید مشاجره ای
+          </a>
+        </div>
+        <div class="product-image">
+          <img src="pic4.png" class="product-img" alt="تصویر کالا" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <footer id="footer">
+    <p>تمامی حقوق این سایت برای <strong>ایلیا صیادی</strong> محفوظ است. © <span id="currentYear"></span></p>
+  </footer>
+  
+  <script>
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      const productCard = document.querySelector('.product-card');
+      
+      productCard.style.opacity = '0';
+      productCard.style.transform = 'translateY(20px)';
+      
+      setTimeout(() => {
+        productCard.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        productCard.style.opacity = '1';
+        productCard.style.transform = 'translateY(0)';
+      }, 100);
+      
+      const whatsappBtn = document.querySelector('.whatsapp-cta');
+      whatsappBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        this.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+          this.style.transform = 'scale(1)';
+          window.location.href = this.href;
+        }, 200);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>فروشگاه به تو چه | خرید و فروش آنلاین</title>
+  <meta name="description" content="فروشگاه اینترنتی به تو چه - خرید و فروش محصولات دیجیتال و کیمدی">
+  <meta name="keywords" content="کیمدی, خرید, فروش, آنلاین, فروشگاه">
+  
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js" as="script">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" as="script">
+  
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  
+  <style>
+    :root {
+      --primary-color: #C2585A;
+      --secondary-color: #4CA6DE;
+      --tertiary-color: #6450FF;
+      --success-color: #56C871;
+      --text-color: #333;
+      --light-text: #f8f9fa;
+      --dark-accent: #020202;
+      --content-bg: #AF6D6E;
+      --card-bg: #9ED8F3;
+      --border-radius: 16px;
+      --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      background: var(--primary-color);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      text-align: center;
+      margin: 0;
+      direction: rtl;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    #header {
+      background: var(--secondary-color);
+      border-bottom: 3px solid var(--dark-accent);
+      border-radius: 31px;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: var(--box-shadow);
+      margin: 1rem;
+      position: relative;
+      z-index: 100;
+    }
+    
+    #header img {
+      width: 140px;
+      max-width: 100%;
+      height: auto;
+      transition: var(--transition);
+    }
+    
+    #header img:hover {
+      transform: scale(1.05);
+    }
+    
+    #footer {
+      background: var(--tertiary-color);
+      border-top: 3px solid var(--dark-accent);
+      border-radius: 9px;
+      padding: 1rem;
+      text-align: center;
+      margin-top: auto;
+      color: var(--light-text);
+      font-size: 0.9rem;
+    }
+    
+    #footer a {
+      color: var(--light-text);
+      text-decoration: none;
+      font-weight: bold;
+      transition: var(--transition);
+    }
+    
+    #footer a:hover {
+      color: #FFD700;
+      text-decoration: underline;
+    }
+    
+    .blog-container {
+      border: 3px solid var(--dark-accent);
+      background: var(--content-bg);
+      border-radius: var(--border-radius);
+      max-width: 1000px;
+      margin: 2rem auto;
+      opacity: 0;
+      transform: translateY(50px) scale(0.8);
+      padding: 1.5rem;
+      box-shadow: var(--box-shadow);
+      transition: var(--transition);
+    }
+    
+    .blog-container.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    
+    .author-info {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    
+    .author-pic {
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border: 2px solid var(--dark-accent);
+      transition: var(--transition);
+    }
+    
+    .author-pic:hover {
+      transform: rotate(5deg);
+    }
+    
+    .topic {
+      margin: 0.5rem 0 0;
+      color: var(--light-text);
+      font-size: 1.5rem;
+    }
+    
+    .content-wrapper {
+      background: var(--card-bg);
+      border: 2px solid var(--dark-accent);
+      border-radius: 6px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      padding: 1.5rem;
+    }
+    
+    .text-content {
+      flex: 1 1 300px;
+      text-align: right;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+    
+    .image-content {
+      flex: 1 1 300px;
+      text-align: center;
+    }
+    
+    .content-image {
+      border: 2px solid var(--dark-accent);
+      width: 100%;
+      max-width: 363px;
+      height: auto;
+      border-radius: var(--border-radius);
+      transition: var(--transition);
+    }
+    
+    .content-image:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .button-container {
+      width: 100%;
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+    
+    .main-button {
+      background: var(--success-color);
+      border: 2px solid var(--dark-accent);
+      border-radius: 5px;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      color: var(--text-color);
+      font-weight: bold;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .main-button:hover {
+      background: #45b863;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    .main-button:active {
+      transform: translateY(0);
+    }
+    
+    .main-button::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 5px;
+      height: 5px;
+      background: rgba(255, 255, 255, 0.5);
+      opacity: 0;
+      border-radius: 100%;
+      transform: scale(1, 1) translate(-50%);
+      transform-origin: 50% 50%;
+    }
+    
+    .main-button:focus:not(:active)::after {
+      animation: ripple 1s ease-out;
+    }
+    
+    @keyframes ripple {
+      0% {
+        transform: scale(0, 0);
+        opacity: 0.5;
+      }
+      100% {
+        transform: scale(20, 20);
+        opacity: 0;
+      }
+    }
+    
+    .loader {
+      display: none;
+      width: 48px;
+      height: 48px;
+      border: 5px solid #FFF;
+      border-bottom-color: var(--tertiary-color);
+      border-radius: 50%;
+      animation: rotation 1s linear infinite;
+      margin: 1rem auto;
+    }
+    
+    @keyframes rotation {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      #header {
+        padding: 1rem;
+        border-radius: 20px;
+      }
+      
+      #header img {
+        width: 120px;
+      }
+      
+      .blog-container {
+        width: 95%;
+        padding: 1rem;
+        margin: 1rem auto;
+      }
+      
+      .content-wrapper {
+        flex-direction: column;
+        padding: 1rem;
+      }
+      
+      .text-content, .image-content {
+        flex: 1 1 100%;
+      }
+      
+      .topic {
+        font-size: 1.3rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      :root {
+        --border-radius: 12px;
+      }
+      
+      #header {
+        border-radius: 15px;
+        margin: 0.5rem;
+      }
+      
+      .main-button {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <img src="logo.png" class="header-logo" alt="لوگوی فروشگاه به تو چه" loading="lazy">
+    <h1>فروشگاه اینترنتی به تو چه</h1>
+  </header>
+  
+  <main>
+    <div class="blog-container" id="mainContent">
+      <div class="author-info">
+        <h2 class="topic">خوش آمدید!</h2>
+      </div>
+      <div class="content-wrapper">
+        <div class="text-content">
+          <p>
+            به فروشگاه آنلاین <strong>به تو چه</strong> خوش آمدید. در اینجا می‌توانید انواع کارت های کیمدی را با بهترین قیمت خریداری کرده یا به فروش برسانید. ما با ارائه محیطی امن و کاربرپسند، تجربه‌ای لذت‌بخش از خرید و فروش آنلاین را برای شما فراهم کرده‌ایم.
+          </p>
+        </div>
+        <div class="image-content">
+          <img src="kimdi.jpg" class="content-image" alt="تصویر فروشگاه" loading="lazy">
+        </div>
+        <div class="button-container">
+          <button id="mainButton" class="main-button">ورود به فروشگاه</button>
+          <div class="loader" id="pageLoader"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <footer id="footer">
+    <p> تمامی حقوق این وبسایت برای <strong>ایلیا صیادی</strong> محفوظ است. © <span id="currentYear"></span></p>
+  </footer>
+  
+  <script src="https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/moment-jalaali@0.10.1/moment-jalaali.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+      
+      gsap.to("#mainContent", {
+        duration: 0.8,
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        ease: "back.out(1.7)",
+        onComplete: function() {
+          document.getElementById('mainContent').classList.add('visible');
+        }
+      });
+      
+      const button = document.getElementById('mainButton');
+      button.addEventListener('click', function(e) {
+        document.getElementById('pageLoader').style.display = 'block';
+        button.style.opacity = '0.7';
+        button.disabled = true;
+        
+        setTimeout(function() {
+          window.location.href = 'blog2.html';
+        }, 1000);
+      });
+
+      const footerLink = document.querySelector('#footer a');
+      footerLink.addEventListener('mouseenter', function() {
+        gsap.to(this, { scale: 1.05, duration: 0.3 });
+      });
+      footerLink.addEventListener('mouseleave', function() {
+        gsap.to(this, { scale: 1, duration: 0.3 });
+      });
+      
+      if ('loading' in HTMLImageElement.prototype) {
+        const images = document.querySelectorAll('img[loading="lazy"]');
+        images.forEach(img => {
+          img.src = img.dataset.src;
+        });
+      }
+    });
+    
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').then(registration => {
+          console.log('ServiceWorker registration successful');
+        }).catch(err => {
+          console.log('ServiceWorker registration failed: ', err);
+        });
+      });
+    }
+  </script>
+</body>
+</html>
